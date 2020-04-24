@@ -2,6 +2,9 @@
 import time
 from binary_search_tree import BinarySearchTree
 
+# Old runtime almost 10 seconds, new runtime just over 0.1 seconds.
+
+
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
