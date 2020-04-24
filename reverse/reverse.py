@@ -46,16 +46,13 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        # You must use recursion for this solution
-        if self.head == None or self.head.next_node == None:
-            return self
-
-        curr = self.head
-        prev = None
-
-        while curr != None:
-            next_node = curr.next_node
-            curr.next_node = None
-            self.add_to_head(curr.value)
-            curr = next_node 
-        # pass
+         # You must use recursion for this solution
+        if node == None:
+            return
+        old_next = node.get_next() 
+        if not prev == None: 
+            node.set_next(prev)
+        if not old_next == None: 
+            self.reverse_list(old_next, node)
+        else: 
+            self.head = node
